@@ -1,0 +1,130 @@
+
+body {
+    background-color: #FFFFFF;
+    color: #222222;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+
+header {
+    background-color: #222222;
+    padding: 20px 10px;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    color: #FFFFFF;
+}
+
+
+nav a {
+    display: inline-block;
+    color: #FFFFFF;
+    background-color: transparent;
+    border: 2px solid #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    margin: 4px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+nav a:hover {
+    background-color: #f1f3f4;
+    color: #222222;
+    border-color: #5d6264;
+}
+
+
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    color: #222222;
+    border-bottom: 3px solid #e1e7e9;
+    padding-bottom: 6px;
+}
+
+h3 {
+    color: #222222;
+}
+
+section {
+    background-color: #FFFFFF;
+    padding: 10px 0;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #C8E6C9;
+    margin: 25px 0;
+}
+
+a {
+    color: #1E7BA6;
+}
+
+/* --- Tablas (usadas en el horario) --- */
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+th {
+    background-color: #cce2ee;
+    color: #222222;
+    padding: 8px;
+}
+
+td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #222222;
+}
+
+
+
+label {
+    font-weight: bold;
+}
+
+input,
+textarea,
+select {
+    padding: 6px;
+    border: 1px solid #87CEEB;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+input[type="submit"] {
+    background-color: #87CEEB;
+    color: #222222;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #C8E6C9;
+}
+
+
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 12px;
+    margin-top: 30px;
+}

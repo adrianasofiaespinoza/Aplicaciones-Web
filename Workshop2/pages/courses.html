@@ -5,6 +5,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Current Courses</title>
+
+    
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+
+        .course-card {
+            background-color: #FFFFFF;
+            border-left: 8px solid #87CEEB;
+            border-radius: 0 10px 10px 0;
+            padding: 18px 28px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+        }
+
+        .course-card h2 {
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .course-card h3 {
+            color: #1E7BA6;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .instructor-name {
+            font-style: italic;
+            margin-top: 0;
+        }
+
+
+        .topics {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 0 0 16px 0;
+            padding: 0;
+        }
+
+        .topics li {
+            background-color: #E8F5E9;
+            color: #222222;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        .expect-list {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .expect-list li {
+            margin-bottom: 6px;
+        }
+
+        .resources-box {
+            border: 2px dashed #87CEEB;
+            border-radius: 10px;
+            padding: 18px 25px;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,11 +82,11 @@
             <h1>My Current Courses</h1>
 
             <nav>
-                <a href="http://workshop1.webapp/index.html">Home</a> |
-                <a href="http://workshop1.webapp/pages/courses.html">Courses</a> |
-                <a href="http://workshop1.webapp/pages/schedule.html">Schedule</a> |
-                <a href="http://workshop1.webapp/pages/hobbies.html">Hobbies</a> |
-                <a href="http://workshop1.webapp/pages/contact.html">Contact</a>
+                <a href="http://my-site/Workshop2/index.html">Home</a>
+                <a href="http://my-site/Workshop2/pages/courses.html">Courses</a>
+                <a href="http://my-site/Workshop2/pages/schedule.html">Schedule</a>
+                <a href="http://my-site/Workshop2/pages/hobbies.html">Hobbies</a>
+                <a href="http://my-site/Workshop2/pages/contact.html">Contact</a>
             </nav>
 
         </center>
@@ -36,39 +104,35 @@
 
         <hr>
 
-        <section>
+        <section class="course-card" style="border-left-color:#eb8791;">
             <h2>Course 1: Artificial Intelligence</h2>
 
-
             <h3>Instructor</h3>
-            <p>Morocho Cayamcela Manuel Eugenio</p>
+            <p class="instructor-name">Morocho Cayamcela Manuel Eugenio</p>
 
             <h3>Main Topics</h3>
-            <ul>
+            <ul class="topics">
                 <li>Artificial Intelligence Fundamentals</li>
                 <li>Machine Learning</li>
                 <li>Knowledge Representation</li>
             </ul>
 
             <h3>Topics I Expect to Learn</h3>
-            <ol>
+            <ol class="expect-list">
                 <li>Machine Learning and Neural Networks</li>
                 <li>Knowledge Representation and Reasoning</li>
                 <li>Practical Applications of Artificial Intelligence</li>
             </ol>
         </section>
 
-        <hr>
-
-        <section>
+        <section class="course-card" style="border-left-color:#e6c8e0;">
             <h2>Course 2: Advanced Mathematics for Science and Engineering</h2>
 
-
             <h3>Instructor</h3>
-            <p>Gallo Fonseca Rodolfo</p>
+            <p class="instructor-name">Gallo Fonseca Rodolfo</p>
 
             <h3>Main Topics</h3>
-            <ul>
+            <ul class="topics">
                 <li>Linear and Nonlinear Ordinary Differential Equations</li>
                 <li>Partial Differential Equations</li>
                 <li>Fourier Series</li>
@@ -76,79 +140,70 @@
             </ul>
 
             <h3>Topics I Expect to Learn</h3>
-            <ol>
+            <ol class="expect-list">
                 <li>Advanced techniques for solving differential equations</li>
                 <li>Fourier analysis and its applications</li>
                 <li>Numerical solutions for partial differential equations</li>
             </ol>
         </section>
 
-        <hr>
-
-        <section>
+        <section class="course-card" style="border-left-color:#d8cf4f;">
             <h2>Course 3: Distributed Systems</h2>
 
-
             <h3>Instructor</h3>
-            <p>Hidrobo Torres Francisco Javier</p>
+            <p class="instructor-name">Hidrobo Torres Francisco Javier</p>
 
             <h3>Main Topics</h3>
-            <ul>
+            <ul class="topics">
                 <li>Communication in Distributed Systems</li>
                 <li>Naming and Directory Services</li>
                 <li>Distributed Transactions</li>
             </ul>
 
             <h3>Topics I Expect to Learn</h3>
-            <ol>
+            <ol class="expect-list">
                 <li>Distributed communication and coordination</li>
                 <li>Fault tolerance and distributed system reliability</li>
                 <li>Design and implementation of distributed applications</li>
             </ol>
         </section>
 
-        <hr>
-
-        <section>
+        <section class="course-card" style="border-left-color:#7CC576;">
             <h2>Course 4: Intelligent Agents</h2>
 
-
             <h3>Instructor</h3>
-            <p>Armas Andrade Tito Rolando</p>
+            <p class="instructor-name">Armas Andrade Tito Rolando</p>
 
             <h3>Main Topics</h3>
-            <ul>
+            <ul class="topics">
                 <li>Deep Reinforcement Learning</li>
                 <li>Intelligent Agents with Generative Models</li>
                 <li>Emerging Architectures</li>
             </ul>
 
             <h3>Topics I Expect to Learn</h3>
-            <ol>
+            <ol class="expect-list">
                 <li>How to design and train intelligent agents</li>
                 <li>Reinforcement learning techniques</li>
                 <li>Applications of generative AI in intelligent agents</li>
             </ol>
         </section>
 
-        <hr>
-
-        <section>
+        <section class="course-card" style="border-left-color:#eb9887;">
             <h2>Course 5: Web Applications</h2>
 
-
             <h3>Instructor</h3>
-            <p>Hidrobo Torres Francisco Javier</p>
+            <p class="instructor-name">Hidrobo Torres Francisco Javier</p>
 
             <h3>Main Topics</h3>
-            <ul>
+            <ul class="topics">
                 <li>Object-Relational Mapping (ORM)</li>
                 <li>Continuous Integration and Deployment</li>
                 <li>Scalability</li>
             </ul>
 
             <h3>Topics I Expect to Learn</h3>
-            <ol>
+            <ol class="expect-list">
                 <li>How to build scalable web applications</li>
                 <li>Continuous integration and deployment practices</li>
                 <li>Database management and ORM techniques</li>
@@ -157,7 +212,7 @@
 
         <hr>
 
-        <section>
+        <section class="resources-box">
             <h2>Related Resources</h2>
 
             <p>
@@ -165,14 +220,11 @@
                 The following link provides access to the course resources:
             </p>
 
-            <ul>
-                <li>
-                    <a href="https://eva.yachaytech.edu.ec/course/view.php?id=250"
-                       target="_blank">
-                        Intelligent Agents Course
-                    </a>
-                </li>
-            </ul>
+            <a href="https://eva.yachaytech.edu.ec/course/view.php?id=250"
+               target="_blank"
+               style="display:inline-block; background-color:#87CEEB; color:#222222; text-decoration:none; font-weight:bold; padding:8px 18px; border-radius:6px;">
+                Intelligent Agents Course
+            </a>
         </section>
 
     </main>
