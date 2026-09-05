@@ -1,11 +1,13 @@
-# My University Website — HTML + CSS
+# My University Website — HTML + CSS + jQuery
 
-A restyled version of the Workshop 1 website. The content and page structure stay the same as the HTML-only version; what's new is a shared, site-wide stylesheet combined with page-specific styling for a cleaner, more polished, and consistent layout.
+The Workshop 2 (HTML + CSS) website, now extended with jQuery for Workshop 3. Same pages and layout as before; what's new is interactive behavior added to three sections: a collapsible show/hide toggle on Home, an image gallery with a modal viewer on Hobbies, and full client-side validation with a success popup on Contact.
 
 ## Tech Stack
 
 - HTML5
-- CSS3 (Flexbox, custom classes, media-free responsive tweaks)
+- CSS3
+- jQuery (via CDN)
+
 
 ## Project Structure
 
@@ -22,41 +24,33 @@ HTML+CSS+JS/
 |-- README.md
 
 
-## Shared Stylesheet (`css/style.css`)
 
-Linked from every page to provide the site-wide look and feel:
+`script.js` and `style.css` are shared and linked from every page, so the jQuery behaviors below apply consistently across `index.html` and all pages inside `pages/`.
 
-- Global typography (Arial/Helvetica) on a white background.
-- A dark `header` with a bold, pill-shaped, bordered `nav` that highlights on hover.
-- A centered `main` content column, capped at 900px wide for readability.
-- Consistent heading styles, section spacing, and green horizontal dividers between sections.
-- Table styling (borders, header background, centered cells) used by the schedule page.
-- Styled form elements (`input`, `textarea`, `select`) with a highlighted submit button.
-- A dark `footer`, matching the header.
+## New Interactive Features (`script.js`)
 
-## Pages and Their Custom Styling
+### Home (`index.html`) — Show/Hide Toggle
+Collapsible content blocks (e.g. "Academic Interests," "My Academic Goals") are hidden by default with `$(".content").hide()`. Clicking a `.toggle-btn` locates its matching content block via `.closest(".section-header").next(".content")` and animates it open or closed with `.slideToggle()`. The button's arrow indicator (`▼` / `▲`) is updated in the same handler to reflect the panel's current state.
 
-### `index.html` — Home
-Adds an internal `<style>` block on top of the shared stylesheet:
-- The profile photo (`.profile-photo`) is displayed as a rounded, shadowed square.
-- Personal information (name, degree program, semester) is shown in a bordered card (`.personal-info`), with each label/value pair on its own row.
-- The "About Me," "Academic Interests," and "Academic Goals" sections are wrapped in a rounded, shadowed green box (`.info-box`).
+### Hobbies (`pages/hobbies.html`) — Gallery Modal
+Clicking any `.gallery-img` copies its `src` into `#modalImage` and reveals the modal overlay (`#imageModal`) with `.fadeIn()`. The modal can be closed via the `.close` button or by clicking the dark background, both using `.fadeOut()`. Clicking the enlarged image itself does not close the modal, since its own click handler calls `event.stopPropagation()` to stop the click from bubbling up to the overlay's close handler.
 
-### `pages/courses.html` — Courses
-Each of the five courses is displayed as a card (`.course-card`) with a color-coded left border unique to that course, along with a styled instructor name, topic list, and "expected to learn" list. The external resources section is wrapped in its own styled box (`.resources-box`).
+### Contact (`pages/contact.html`) — Form Validation
+On submit, `e.preventDefault()` stops the default browser submission. Each field is checked and, if invalid, marked with an `.invalid` class plus an inline error message via a shared `markInvalid()` helper:
 
-### `pages/schedule.html` — Weekly Schedule
-The table from Workshop 1 is rebuilt using CSS classes instead of the `bgcolor` attribute. Each subject has its own class for color-coding (`.subj-ai`, `.subj-math`, `.subj-web`, `.subj-distributed`, `.subj-agents`), and the table is wrapped in a scrollable `.schedule-wrapper` container so it stays readable on smaller screens.
+- **Full Name** — required.
+- **Email** — required and validated against a basic email regex.
+- **Date of Birth** — required and cannot be a future date.
+- **Degree Program** and **Semester** — required dropdowns.
+- **Reason for Contact** — required dropdown.
+- **Message** — required, minimum 10 characters.
+- **Acceptance checkbox** — must be checked.
 
-### `pages/contact.html` — Contact
-The form is redesigned as a styled card (`.contact-card`) with a header/body layout, grouped fields (`.field-group`), a highlighted asterisk marking required fields (`.required`), and dedicated rows for the checkbox and submit button.
-
-### `pages/hobbies.html` — Hobbies
-Each hobby section (Sports, Programming and Technology, Artificial Intelligence, Mathematics) is laid out as an alternating image/text row (`.hobby-row`, with `.reverse` flipping the direction on alternating rows), featuring an emoji icon (`.hobby-icon`) next to the description and interest list (`.interest-list`), separated by styled dividers (`.divider`).
+If all checks pass, `alert("Form submitted successfully!")` is shown and the form resets. Error states clear automatically as the user edits each field, thanks to an `input`/`change` listener.
 
 ## Navigation
 
-The same navigation bar from Workshop 1 (Home · Courses · Schedule · Hobbies · Contact) appears on every page, now restyled to match the rest of the site.
+Same navigation bar as previous workshops (Home · Courses · Schedule · Hobbies · Contact) on every page.
 
 ## How to View
 
@@ -64,7 +58,7 @@ Clone or download the project, then open `index.html` in any modern browser — 
 
 ```bash
 git clone <repo-url>
-cd HTML+CSS
+cd HTML+CSS+JS
 open index.html   # or double-click the file
 ```
 
