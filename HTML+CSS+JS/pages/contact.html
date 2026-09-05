@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="../script.js"></script>
+
+<style>
+    .contact-card {
+        background-color: #FFFFFF;
+        max-width: 640px;
+        margin: 20px auto;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-header {
+        background-color: #b7ecc3;
+        padding: 32px 20px;
+        text-align: center;
+    }
+
+    .card-header h1 {
+        margin: 0 0 6px 0;
+    }
+
+    .card-header p {
+        margin: 0;
+        font-size: 0.95em;
+    }
+
+    .card-body {
+        padding: 32px 36px;
+    }
+
+    .contact-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 24px;
+    }
+
+    .field-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .field-group.full {
+        grid-column: 1 / -1;
+    }
+
+    .contact-form label {
+        font-size: 0.85em;
+        font-weight: 700;
+        margin-bottom: 6px;
+    }
+
+    .required {
+        color: #1E7BA6;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        border: none;
+        border-bottom: 2px solid #C8E6C9;
+        border-radius: 0;
+        background-color: #FAFAFA;
+        padding: 9px 6px;
+        font-size: 1em;
+        transition: border-color 0.25s ease, background-color 0.25s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+        outline: none;
+        border-bottom-color: #87CEEB;
+        background-color: #EAF6FC;
+    }
+
+    .contact-form textarea {
+        resize: vertical;
+    }
+
+    .checkbox-row {
+        grid-column: 1 / -1;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .checkbox-row input {
+        width: auto;
+        margin-top: 4px;
+    }
+
+    .checkbox-row label {
+        font-weight: 400;
+        font-size: 0.9em;
+    }
+
+    .submit-row {
+        grid-column: 1 / -1;
+        text-align: center;
+        margin-top: 6px;
+    }
+
+    .card-body input[type="submit"] {
+        background-color: #222222;
+        color: #FFFFFF;
+        border: none;
+        padding: 13px 45px;
+        border-radius: 30px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card-body input[type="submit"]:hover {
+        background-color: #000000;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (max-width: 560px) {
+        .contact-form {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .contact-form input.invalid,
+    .contact-form select.invalid,
+    .contact-form textarea.invalid {
+        border-bottom-color: #e74c3c !important;
+        background-color: #fdecea !important;
+    }
+    
+    .error-message {
+        color: #e74c3c;
+        font-size: 0.8em;
+        margin-top: 4px;
+        display: none;
+    }
+    
+    .error-message.show {
+        display: block;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <center>
+        <h1>Contact Me</h1>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="hobbies.html">Hobbies</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </center>
+</header>
+
+<main>
+
+<div class="contact-card">
+
+    <div class="card-header">
+        <h1>Let's Talk</h1>
+        <p>Fill out the form below and I will get back to you</p>
+    </div>
+
+    <div class="card-body">
+        <form class="contact-form">
+
+            <div class="field-group">
+                <label for="name">Full Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="field-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="field-group">
+                <label for="birthdate">Date of Birth <span class="required">*</span></label>
+                <input type="date" id="birthdate" name="birthdate" required>
+            </div>
+
+            <div class="field-group">
+                <label for="degree">Degree Program <span class="required">*</span></label>
+                <select id="degree" name="degree" required>
+                    <option value="">Select your degree</option>
+                    <option value="computer-science">Computer Science</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="field-group">
+                <label for="semester">Semester <span class="required">*</span></label>
+                <select id="semester" name="semester" required>
+                    <option value="">Select your semester</option>
+                    <option value="1">First Semester</option>
+                    <option value="2">Second Semester</option>
+                    <option value="3">Third Semester</option>
+                    <option value="4">Fourth Semester</option>
+                    <option value="5">Fifth Semester</option>
+                    <option value="6">Sixth Semester</option>
+                    <option value="7">Seventh Semester</option>
+                    <option value="8">Eighth Semester</option>
+                    <option value="9">Ninth Semester</option>
+                    <option value="10">Tenth Semester</option>
+                </select>
+            </div>
+
+            <div class="field-group">
+                <label for="reason">Reason for Contact <span class="required">*</span></label>
+                <select id="reason" name="reason" required>
+                    <option value="">Select a reason</option>
+                    <option value="academic">Academic Question</option>
+                    <option value="project">Project Collaboration</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="field-group full">
+                <label for="message">Message <span class="required">*</span></label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="accept" name="accept" required>
+                <label for="accept">
+                    I accept that my information can be used to respond to my message.
+                </label>
+            </div>
+
+            <div class="submit-row">
+                <input type="submit" value="Send Message">
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+</main>
+
+<footer>
+<center>
+<p>&copy; 2026 Adriana Sofia Espinoza Chicaiza</p>
+</center>
+</footer>
+
+</body>
+
+</html>

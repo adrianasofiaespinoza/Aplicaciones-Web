@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../script.js"></script>
+
+    <style>
+        .hobby-row {
+            display: flex;
+            align-items: center;
+            gap: 45px;
+            padding: 25px 0;
+        }
+
+        .hobby-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .hobby-visual {
+            flex: 0 0 170px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hobby-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+            margin-bottom: 12px;
+        }
+
+        .hobby-row:nth-child(odd) .hobby-icon {
+            background-color: #87CEEB;
+        }
+
+        .hobby-row:nth-child(even) .hobby-icon {
+            background-color: #C8E6C9;
+        }
+
+        .hobby-visual h2 {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin: 0;
+            font-size: 1.2em;
+        }
+
+        .hobby-text {
+            flex: 1;
+        }
+
+        .interest-list {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 0 0;
+        }
+
+        .interest-list li {
+            padding: 4px 0;
+        }
+
+        .interest-list li::before {
+            content: "✓";
+            color: #1E7BA6;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #C8E6C9, transparent);
+            border: none;
+                margin: 0;
+        }
+
+        /* Galería */
+        .gallery {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .gallery-title {
+          margin-bottom: 20px;
+          text-align: center;
+        }
+
+        .gallery-images {
+          display: flex;
+          gap: 15px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .gallery-img {
+          width: 220px;
+          height: 220px;
+          object-fit: cover;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+
+        .gallery-img:hover {
+          transform: scale(1.05);
+        }
+
+        .modal {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0,0,0,0.8);
+          z-index: 1000;
+        }
+
+        #modalImage {
+          display: block;
+          max-width: 80%;
+          max-height: 80%;
+          margin: 50px auto;
+        }
+
+        .close {
+          position: absolute;
+          top: 20px;
+          right: 35px;
+          color: white;
+          font-size: 40px;
+          font-weight: bold;
+          cursor: pointer;
+          z-index: 1001;
+        }
+
+        .close:hover {
+          color: #ccc;
+        }
+
+        @media (max-width: 640px) {
+            .hobby-row,
+            .hobby-row.reverse {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <center>
+            <h1>My Hobbies and Interests</h1>
+
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="schedule.html">Schedule</a>
+                <a href="hobbies.html">Hobbies</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </center>
+    </header>
+
+    <main>
+
+        <div class="hobby-row">
+            <div class="hobby-visual">
+                <div class="hobby-icon">⚽</div>
+                <h2>Sports</h2>
+            </div>
+            <div class="hobby-text">
+                <p>
+                    Sports are an important part of my free time. I enjoy playing
+                    soccer and basketball because they help me stay active, clear
+                    my mind, and spend time with other people. I also enjoy going
+                    to the gym, where I can work on my physical condition and
+                    maintain a healthy routine.
+                </p>
+                <p>
+                    Playing sports also teaches me important values such as
+                    discipline, teamwork, perseverance, and consistency. I think
+                    these values are useful not only in sports but also in my
+                    academic life.
+                </p>
+                <ul class="interest-list">
+                    <li>Playing soccer</li>
+                    <li>Playing basketball</li>
+                    <li>Going to the gym</li>
+                    <li>Improving my physical condition</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="hobby-row reverse">
+            <div class="hobby-visual">
+                <div class="hobby-icon">💻</div>
+                <h2>Programming and Technology</h2>
+            </div>
+            <div class="hobby-text">
+                <p>
+                    Another important interest of mine is technology. I enjoy
+                    programming because it allows me to solve problems and turn
+                    ideas into real projects. I like experimenting with different
+                    programming languages and learning how software applications
+                    work.
+                </p>
+                <p>
+                    I am particularly interested in web development and enjoy
+                    creating websites and applications. Building projects helps
+                    me practice what I learn at university while also developing
+                    my creativity and problem-solving skills.
+                </p>
+                <ul class="interest-list">
+                    <li>Programming</li>
+                    <li>Web Development</li>
+                    <li>Software Projects</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="hobby-row">
+            <div class="hobby-visual">
+                <div class="hobby-icon">🤖</div>
+                <h2>Artificial Intelligence</h2>
+            </div>
+            <div class="hobby-text">
+                <p>
+                    Artificial intelligence is another area that I find very
+                    interesting. I enjoy learning how intelligent systems can
+                    analyze information, learn from data, and make decisions.
+                    This interest is also connected to some of the courses I am
+                    currently taking at university.
+                </p>
+                <p>
+                    I would like to continue learning about machine learning,
+                    intelligent agents, and other applications of artificial
+                    intelligence. I am especially interested in understanding how
+                    these technologies can be applied to solve real-world problems.
+                </p>
+                <ul class="interest-list">
+                    <li>Artificial Intelligence</li>
+                    <li>Machine Learning</li>
+                    <li>Intelligent Agents</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="hobby-row reverse">
+            <div class="hobby-visual">
+                <div class="hobby-icon">📐</div>
+                <h2>Mathematics</h2>
+            </div>
+            <div class="hobby-text">
+                <p>
+                    Mathematics is also one of my academic interests. I enjoy
+                    working with mathematical problems because they challenge me
+                    to think logically and find different ways to reach a solution.
+                </p>
+                <p>
+                    I believe that mathematics is especially useful in Computer
+                    Science because many areas, such as artificial intelligence,
+                    algorithms, and data analysis, require mathematical reasoning.
+                </p>
+                <ul class="interest-list">
+                    <li>Problem Solving</li>
+                    <li>Advanced Mathematics</li>
+                    <li>Mathematical Applications in Computer Science</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="hobby-row">
+            <div class="hobby-visual">
+                <div class="hobby-icon">🐱</div>
+                <h2>Cats</h2>
+            </div>
+        
+            <div class="hobby-text">
+                <p>
+                    I am a cat lover and currently have two cats. Spending time with
+                    them is one of my favorite ways to relax after studying or working.
+                    Their different personalities make every day interesting and fun.
+                </p>
+            
+                <p>
+                    Taking care of my cats has taught me responsibility, patience, and
+                    the importance of paying attention to small details. I enjoy
+                    playing with them, watching their funny behavior, and making sure
+                    they are healthy and comfortable.
+                </p>
+            
+                <ul class="interest-list">
+                    <li>Taking care of my two cats</li>
+                    <li>Playing with pets</li>
+                    <li>Learning about cat behavior</li>
+                    <li>Animal welfare and responsible pet care</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="gallery">
+          <h2 class="gallery-title">Gallery</h2>
+          <div class="gallery-images">
+            <img src="../images/image1.png" class="gallery-img" alt="Image 1">
+            <img src="../images/img2.jpeg" class="gallery-img" alt="Image 2">
+            <img src="../images/img4.jpeg" class="gallery-img" alt="Image 3">
+            <img src="../images/img5.jpeg" class="gallery-img" alt="Image 4" style="width: 350px;">
+          </div>
+        </div>
+
+        <div id="imageModal" class="modal">
+          <span class="close">&times;</span>
+          <img id="modalImage">
+        </div>
+    </main>
+
+    <footer>
+        <center>
+            <p>&copy; 2026 Adriana Sofia Espinoza Chicaiza</p>
+        </center>
+    </footer>
+
+</body>
+
+</html>

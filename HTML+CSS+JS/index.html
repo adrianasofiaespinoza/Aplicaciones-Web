@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My University Website</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+
+    <style>
+        .info-box {
+            background-color: #C8E6C9;
+            border-radius: 12px;
+            padding: 20px 30px;
+            max-width: 700px;
+            margin: 0 auto 25px auto;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-photo {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            object-position: center 15%;
+            border: 5px solid #e0e1e2;
+            border-radius: 10%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 15px;
+        }
+
+        .personal-info {
+            background-color: #FFFFFF;
+            border: 2px solid #87CEEB;
+            border-radius: 10px;
+            max-width: 300px;
+            margin: 10px auto 20px auto;
+            padding: 5px 25px 15px 25px;
+            text-align: left;
+        }
+ 
+        .personal-info h3 {
+            text-align: center;
+            color: #222222;
+            border-bottom: 1px solid #deebf0;
+            padding-bottom: 8px;
+        }
+ 
+        .personal-info p {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin: 0;
+            padding: 8px 0;
+            border-bottom: 1px dashed #c7edc9;
+        }
+ 
+        .personal-info p:last-child {
+            border-bottom: none;
+        }
+ 
+        .personal-info strong {
+            color: #080909;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <center>
+        <h1>My University Website</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="pages/courses.html">Courses</a>
+            <a href="pages/schedule.html">Schedule</a>
+            <a href="pages/hobbies.html">Hobbies</a>
+            <a href="pages/contact.html">Contact</a>
+        </nav>
+        
+    </center>
+</header>
+
+<main>
+
+        <center>
+            <h2>About Me</h2>
+
+            <img
+                src="images/adriana.png"
+                alt="Photo of Adriana Sofia Espinoza Chicaiza"
+                class="profile-photo"
+            >
+        <section class="personal-info">
+            <h3>Personal Information</h3>
+ 
+            <p>
+                <strong>Name:</strong> <span>Adriana Sofia Espinoza Chicaiza</span>
+            </p>
+ 
+            <p>
+                <strong>Degree Program:</strong> <span>Computer Science</span>
+            </p>
+ 
+            <p>
+                <strong>Semester:</strong> <span>Seventh Semester</span>
+            </p>
+        </section>
+
+        </center>
+        
+    <section class="info-box">
+        <p>
+            I am a Computer Science student with a strong interest in
+            technology, programming, artificial intelligence, and mathematics.
+            I enjoy learning new concepts, solving problems, and developing
+            projects that allow me to apply the knowledge I gain at university.
+        </p>
+
+        <p>
+            I consider myself a curious and organized person who enjoys
+            learning through both theory and practice. Working on academic
+            projects has helped me improve my problem-solving skills and
+            understand how computer science can be applied to real-world
+            situations.
+        </p>
+
+        <p>
+            One of my main goals is to continue developing my technical
+            skills and gain more experience creating useful applications
+            with modern technologies.
+        </p>
+    </section>
+
+    <section class="info-box">
+
+        <div class="section-header">
+            <h2>Academic Interests</h2>
+            <button class="toggle-btn">▼</button>
+        </div>
+
+        <div class="content">
+            <p>
+                During my studies, I have developed an interest in several
+                areas of computer science and mathematics.
+            </p>
+
+            <ul>
+                <li>Artificial Intelligence</li>
+                <li>Web Development</li>
+                <li>Mathematics</li>
+                <li>Technology and Finance</li>
+            </ul>
+        </div>
+
+    </section>
+
+
+    <section class="info-box">
+
+       <div class="section-header">
+            <h2>My Academic Goals</h2>
+            <button class="toggle-btn">▼</button>
+        </div>
+
+        <div class="content">
+        <p>
+            My goal is to strengthen my knowledge of computer science and
+            gain practical experience through academic and personal projects.
+            I want to improve my programming skills, learn more about
+            artificial intelligence, and understand how technology can be
+            used to solve practical problems.
+        </p>
+
+        <ol>
+            <li>Improve my programming and problem-solving skills.</li>
+            <li>Learn more about artificial intelligence.</li>
+            <li>Develop useful web and software applications.</li>
+            <li>Continue learning new technologies and tools.</li>
+        </ol>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <center>
+        <p>&copy; 2026 Adriana Sofia Espinoza Chicaiza</p>
+    </center>
+</footer>
+
+</body>
+
+</html>
