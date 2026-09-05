@@ -11,6 +11,7 @@ The Workshop 2 (HTML + CSS) website, now extended with jQuery for Workshop 3. Sa
 
 ## Project Structure
 
+```
 HTML+CSS+JS/
 |-- images/
 |-- pages/
@@ -22,7 +23,7 @@ HTML+CSS+JS/
 |-- script.js
 |-- style.css
 |-- README.md
-
+```
 
 
 `script.js` and `style.css` are shared and linked from every page, so the jQuery behaviors below apply consistently across `index.html` and all pages inside `pages/`.
